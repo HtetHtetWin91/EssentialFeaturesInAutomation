@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Utils.WebDriverUtil;
+
 import static org.openqa.selenium.support.locators.RelativeLocator.*;
 
 public class UsageOfRelativeLocators {
@@ -12,8 +14,7 @@ public class UsageOfRelativeLocators {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "\\Users\\User\\Documents\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = WebDriverUtil.getDriver();
 
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
 
@@ -33,6 +34,8 @@ public class UsageOfRelativeLocators {
 		WebElement rdb = driver.findElement(By.id("inlineRadio1"));
 
 		System.out.println(driver.findElement(with(By.tagName("label")).toRightOf(rdb)).getText());
+		
+		WebDriverUtil.closeDriver();
 
 	}
 

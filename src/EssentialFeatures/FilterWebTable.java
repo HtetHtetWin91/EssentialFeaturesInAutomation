@@ -8,12 +8,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Utils.WebDriverUtil;
+
 public class FilterWebTable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "\\Users\\User\\Documents\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		
+		WebDriver driver = WebDriverUtil.getDriver();
+	
 
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
@@ -43,8 +46,12 @@ public class FilterWebTable {
 			}
 
 		} while (price.size() < 1);
+		
+		WebDriverUtil.closeDriver();
 
 	}
+	
+	
 
 	private static String getPriceVeggie(WebElement s) {
 

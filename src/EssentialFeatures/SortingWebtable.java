@@ -9,12 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import Utils.WebDriverUtil;
+
 public class SortingWebtable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "\\Users\\User\\Documents\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = WebDriverUtil.getDriver();
+		
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
 		// click on column
@@ -36,6 +38,8 @@ public class SortingWebtable {
 		// compare original list vs sorted list
 
 		Assert.assertTrue(originalList.equals(sortedList));
+		
+		WebDriverUtil.closeDriver();
 
 	}
 

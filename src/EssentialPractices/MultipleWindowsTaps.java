@@ -9,12 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Utils.WebDriverUtil;
+
 public class MultipleWindowsTaps {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "\\Users\\User\\Documents\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = WebDriverUtil.getDriver();
 		
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
 
@@ -44,6 +45,8 @@ public class MultipleWindowsTaps {
 		WebElement name=driver.findElement(By.cssSelector("[name='name']"));
 
 		name.sendKeys(courseName);
+		
+		WebDriverUtil.closeDriver();
 	}
 
 }
